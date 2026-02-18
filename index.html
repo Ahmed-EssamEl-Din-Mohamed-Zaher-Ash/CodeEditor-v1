@@ -1,1 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevStudio Pro — High Cognitive Performance IDE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="left-sidebar panel">
+        <header>
+          <h1>DevStudio Pro</h1>
+          <p>by Ahmed Essam Ashour</p>
+        </header>
 
+        <section class="feature-group">
+          <h2>Focus Mode</h2>
+          <label><input type="checkbox" id="toggleDimming" checked /> Contextual Dimming</label>
+          <label><input type="checkbox" id="toggleFlow" checked /> Mental Flow Mapping</label>
+          <label><input type="checkbox" id="toggleLogicOnly" /> Logic-Only Mode</label>
+          <label><input type="checkbox" id="toggleDebugTips" checked /> Isolated Debugging</label>
+          <label><input type="checkbox" id="toggleCommentFilter" checked /> Smart Comment Filtering</label>
+          <label><input type="checkbox" id="toggleZen" /> Deep Work Shield (Zen)</label>
+          <label><input type="checkbox" id="toggleDocs" checked /> In-situ Documentation</label>
+        </section>
+
+        <section class="feature-group">
+          <h2>Logic Tools</h2>
+          <label><input type="checkbox" id="toggleFlowchart" checked /> Instant Logic Flowcharts</label>
+          <label><input type="checkbox" id="toggleStateTracking" checked /> Visual State Tracking</label>
+          <label><input type="checkbox" id="toggleHeatmap" checked /> Impact Heatmap</label>
+          <label><input type="checkbox" id="toggleNL" checked /> Natural Language Interpreter</label>
+          <label><input type="checkbox" id="toggleBoiler" checked /> Boilerplate Summarizer</label>
+          <label><input type="checkbox" id="toggleBoolean" checked /> Boolean Simplifier</label>
+        </section>
+
+        <section class="feature-group">
+          <h2>Workspace</h2>
+          <button id="saveSnapshot">Save Context Snapshot</button>
+          <button id="restoreSnapshot">Restore Snapshot</button>
+          <button id="pinSelection">Pin Mental Anchor</button>
+          <button id="runCode">Run / Debug</button>
+        </section>
+
+        <section class="feature-group">
+          <h2>Semantic Search</h2>
+          <input id="semanticSearch" placeholder="e.g. how to connect to DB" />
+          <ul id="semanticResults" class="list"></ul>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="editor-stack panel">
+          <div class="editor-toolbar">
+            <span>main.cs</span>
+            <div class="status-pill">Cyclomatic Complexity: <strong id="complexityGauge">1</strong></div>
+            <div class="status-pill">Brain Load Index: <strong id="brainLoad">Low</strong></div>
+          </div>
+
+          <div class="editor-wrapper" id="editorWrapper">
+            <textarea id="codeEditor" spellcheck="false"></textarea>
+            <canvas id="flowCanvas"></canvas>
+            <div id="dimmingOverlay"></div>
+            <div id="ghostText"></div>
+            <div id="docPopup"></div>
+          </div>
+
+          <div class="logic-preview" id="logicPreview"></div>
+        </section>
+
+        <section class="output-stack panel">
+          <div class="console-header">
+            <span>Output / Debug Console</span>
+            <span id="typingSignal">Idle</span>
+          </div>
+          <pre id="consoleOutput"></pre>
+        </section>
+      </main>
+
+      <aside class="right-sidebar panel">
+        <section>
+          <h2>Integrated Scratchpad</h2>
+          <textarea id="scratchpad" placeholder="Quick snippets, equations, pseudo code..."></textarea>
+        </section>
+
+        <section>
+          <h2>Logic Flowchart</h2>
+          <div id="flowchartPanel" class="visual-box"></div>
+        </section>
+
+        <section>
+          <h2>State Timeline</h2>
+          <ol id="stateTimeline" class="list"></ol>
+        </section>
+
+        <section>
+          <h2>Mental Anchors</h2>
+          <div id="anchorPanel" class="visual-box"></div>
+        </section>
+
+        <section>
+          <h2>Boilerplate Summary</h2>
+          <ul id="boilerplateSummary" class="list"></ul>
+        </section>
+
+        <section>
+          <h2>Boolean Simplifier</h2>
+          <ul id="booleanHints" class="list"></ul>
+        </section>
+
+        <section>
+          <h2>Brainstorming Canvas</h2>
+          <canvas id="brainCanvas" width="300" height="180"></canvas>
+          <button id="convertCanvas">Convert Sketch → C# Structure</button>
+        </section>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
